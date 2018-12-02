@@ -1,0 +1,17 @@
+<!--pages/updateHistory/updateHistory.wxml-->
+<view class='update-history-container'>
+    <view class='update-history-item' wx:for="{{updateHistory}}">
+      <view class='version'>
+        <view class='version-top'>
+          <text>{{item.Version}}</text>
+          <image src='/images/new.png' hidden='{{index==0?false:true}}'></image>
+        </view>
+        <text class='date'>{{item.PostDate}}</text>
+      </view>
+      <view class='update-detail'>
+        <view wx:for="{{item.Content}}">
+            <view>{{index+'.'+item}}</view>
+        </view>
+      </view>
+    </view>
+</view>

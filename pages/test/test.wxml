@@ -1,0 +1,3 @@
+<!--pages/test/test.wxml-->
+<button bindtap='get1'>get1</button>
+<button bindtap='get2'>get2</button>

@@ -1,0 +1,48 @@
+<view class="set-page-container">
+  <!--顶部用户信息-->
+  <view class='user-pic-container'>
+    <image src='{{userInfo.AvatarUrl}}' class='user-pic' ></image>
+    <text class='user-name'>{{userInfo.UserName}}</text>
+  </view>
+  <!--具体设置项-->
+  <!--<view class='set-item'>
+    <text>每月预算</text>
+    <view>
+      <input type='digit' value="{{budget}}" class='budget-input' bindchange='ChangeBudgetValue' bindblur='inputComplete'></input>
+      <image class='right-arrow-icon' src='/images/rightarrow.png'></image>
+    </view>
+  </view>-->
+  <view class='set-item' bindtap='ChangeDisplayItemWay' hidden='true'>
+    <text>明细显示方式</text>
+    <view>
+      <text>{{showDetailWayList[displayItemWay]}}</text>
+      <image class='right-arrow-icon' src='/images/rightarrow.png'></image>
+    </view>
+  </view>
+  <view class='set-item' bindtap='giveMeAdvice'>
+    <text>意见反馈</text>
+    <view>
+      <image class='right-arrow-icon' src='/images/rightarrow.png'></image>
+    </view>
+  </view>
+  <view class='set-item' bindtap='NavigateToUpdateHistoryPage'>
+    <text>更新记录</text>
+    <view>
+      <image class='right-arrow-icon' src='/images/rightarrow.png'></image>
+    </view>
+  </view>
+  <navigator url='/pages/me/me'>
+    <view class='set-item'>
+    <text>关于应用</text>
+    <view>
+      <image class='right-arrow-icon' src='/images/rightarrow.png'></image>
+    </view>
+  </view>
+  </navigator>
+  <view class='set-item set-item-last'>
+    <text>版本号</text>
+    <view>
+      <text class='version'>1.4.1</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/guide/guide",
+    "pages/add/add",
+    "pages/set/set",
+    "pages/me/me",
+    "pages/advice/advice",
+    "pages/test/test",
+    "pages/count/count",
+    "pages/updateHistory/updateHistory"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#208ee1",
+    "navigationBarTitleText": "一记账",
+    "navigationBarTextStyle": "Black"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#4bb0e8",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/index-selected.png",
+        "iconPath": "images/index.png",
+        "pagePath": "pages/index/index",
+        "text": "本月"
+      },
+      {
+        "selectedIconPath": "images/set-selected.png",
+        "iconPath": "images/set.png",
+        "pagePath": "pages/set/set",
+        "text": "设置"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+<view class='advice-container'>
+  <form bindsubmit='postAdvice' report-submit='true'>
+    <view class='tips'>
+      <text>问题描述</text>
+    </view>
+    <textarea class='advice-content' placeholder='请输入你要提的意见，我收到后会改哦' name='content'>
+    </textarea>
+    <button class='push' form-type='submit'>提交</button>
+  </form>
+</view>

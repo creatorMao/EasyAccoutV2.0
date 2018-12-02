@@ -1,0 +1,86 @@
+<view class='index-page-container'>
+  <!--首页顶部-->
+  <view class='header'>
+    <view class='header-content'>
+      <view class='budget-container'>
+        <text class='budgetary-amount-text'>当前月收支差余额</text>
+        <image src='{{eyeIconSrc}}' class='eye-show' mode='scaleToFill' bindtap='SetEyeState'></image>
+      </view>
+      <view class='budgetary-amount-value'>{{isEyeClose?'******':resultValue.MonthlyBalance}}</view>
+      <view class='current-date-container'>
+        <picker mode="date" start="2013-09-01" end="2027-09-01" value='{{currentDate}}' bindchange='selectDate' fields='month'>{{currentDate}}</picker>
+        <image src='/images/down.png' class='down-drop'></image>
+        <image src='/images/count.png' class='count' bindtap='openCurrentMonthCount' hidden='true'></image>
+      </view>
+      <view class='type-container'>
+        <view class='type-item type-item-left'>
+          <text>支出</text>
+          <text class='cost-text-value'>{{isEyeClose?'***':resultValue.MonthlyCostCount}}</text>
+        </view>
+        <view class='type-item type-item-right'>
+          <text>收入</text>
+          <text>{{isEyeClose?'***':resultValue.MonthlyIncomeCount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--首页下部-->
+  <scroll-view class='daily-record-container' scroll-y="true" bindscroll="bindScroll" bindscrolltolower="lower">
+    <!--支出每日记录-->
+    <view wx:for="{{resultValue.DayRcord}}" hidden='{{resultValue.DayRcord.length==0?true:false}}'>
+      <!--每日记录总统计-->
+      <view class='daily-item-container' bindtap='openDailyDetailContainer' data-id='{{index}}'>
+        <view class='left-container'>
+          <text>{{item.Date}}</text>
+          <text></text>
+        </view>
+        <view class='right-container'>
+          <view class='right-container-cost'>
+            <text>{{isEyeClose?'*':'￥'}}</text>
+            <text>{{isEyeClose?'**':item.CostCount}}</text>
+          </view>
+          <view class="right-container-income">
+            <text>{{isEyeClose?'*':'￥'}}</text>
+            <text>{{isEyeClose?'**':item.IncomeCount}}</text>
+          </view>
+
+        </view>
+      </view>
+      <!--每日记录分开统计-->
+      <view class="daily-item-detial-container " wx:if="{{showItemWay=='0'}}">
+        <view class='daily-item-detial' wx:for="{{item.Records}}" bindtap='openItemDetail' data-model='{{item}}' bindlongpress='deleteRecord'>
+          <view class='type-icon'>
+            <image src="{{item.IconPath}}"></image>
+          </view>
+          <view class='left-container'>
+            <text class='spend-type-text'>{{item.IconName}}</text>
+            <view class='spend-notes'>
+              <image class='spend-notes-icon' src='/images/write1.png'></image>
+              <text class='spend-notes-text'>{{item.Note}}</text>
+            </view>
+          </view>
+          <view class="right-container {{item.Way=='收入'?'right-container-income':''}}">
+            <text class='money-string'>{{isEyeClose?'**':'￥'}}</text>
+            <text class="money-text">{{isEyeClose?'**':item.Money}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--没有记录-->
+    <view class='none-items-container' hidden='{{resultValue.DayRcord.length==0?false:true}}'>
+      <view>
+        <image class='none-items-icon' src='/images/nothing.png'></image>
+      </view>
+      <view>
+        <text>还没有记录哦！</text>
+        <view class='some-tips' hidden='{{day==1?false:true}}'>
+          遇到新的一个月账单会重新开始，但记录不会删除，你可以点击收支差额下面的日期，选择对应的月份进行查询。（喵喵喵）
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!--首页添加按钮-->
+  <view class="add-container {{down==true?'add-container-down':''}}" bindtap='addAccount'>
+    <image src="/images/add-new.png"></image>
+  </view>
+</view>

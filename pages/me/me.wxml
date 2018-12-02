@@ -1,0 +1,37 @@
+<view class='me-container'>
+    <view class='author'>
+      <image class='author-pic' src='/images/me.jpg'></image>
+      <view class='author-derc'>
+        <text class='name'>5只猫</text>
+        <text>开发者</text>
+      </view>
+    </view>
+    <view class='content'>
+        <text>
+          Hi,历经一个多月，一记账终于与大家见面了，开发这个小程序本身的需求来自于自己。想做一个简洁的记账软件。所以就有了这个.
+        </text>
+        <text>
+          some tips:
+        </text>
+        <text>
+          0.新的一个月 记录不会清除 可以从首页时间选择器点击选择月份
+        </text>
+        <text>
+          1.服务器比较渣，获取数据有时可能比较慢
+        </text>
+        <text hidden='true'>
+          2.首页日期选择器右边有一个月账单的功能(ps.暂时还没与找到好的地方)
+        </text>
+        <text>
+          2.本小程序不会记录用户的微信密码。
+        </text>
+        <text>
+          3.如果碰到bug.请及时联系我(ps.设置界面有一个意见反馈，或联系我微信号..)
+        </text>
+    </view>
+    <view class='link'>
+      <text bindtap='copyWechat'>Wechat</text>
+      <text bindtap='copyQQ'>QQ</text>
+      <text bindtap='copyWeibo'>Weibo</text>
+    </view>
+</view>

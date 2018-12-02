@@ -1,0 +1,9 @@
+<!--pages/guide/guide.wxml-->
+<view class='wrapper'>
+  <view class='mask'>
+    <image src=''></image>
+  </view>
+  <view class='content'>
+  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='login'>登录</button>
+  </view>
+</view>

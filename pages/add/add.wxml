@@ -1,0 +1,70 @@
+<view class="add-page-container">
+
+  <!--类型转换-->
+  <view class='header'>
+    <view class='type-switch'>
+      <view class="type-switch-mask {{swiperCurrentIndex==1?'type-switch-mask-active':''}}">
+      </view>
+      <view class='type-item-container'>
+        <view class="type-switch-item {{swiperCurrentIndex==1?'':'type-switch-item-active'}}">
+          <text>支出</text>
+        </view>
+        <view class="type-switch-item {{swiperCurrentIndex==1?'type-switch-item-active':''}}" >
+          <text>收入</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--Main-->
+  <view class='main'>
+    <!--图标容器-->
+    <view class='icon-cntainer'>
+      <swiper indicator-dots='{{true}}' class='icon-cntainer' current='{{swiperCurrentIndex}}' bindchange='swiperCurrentChanged' indicator-active-color='#208ee1'>
+        <swiper-item>
+          <view class='cost-icon-container'>
+            <view class="cost-icon-item {{recordModel.SpecificID==item.ID?'icon-item-active':''}}" wx:for="{{iconsList.costIconList}}" bindtap='ChooseAWay'  data-id='{{item.ID}}'>
+              <image class='cost-icon' src='{{item.IconPath}}'> </image>
+              <text>{{item.IconName}}</text>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class='income-icon-container'>
+            <view class="income-icon-item {{recordModel.SpecificID==item.ID?'icon-item-active':''}}" wx:for="{{iconsList.incomeIconList}}" bindtap='ChooseAWay'  data-id='{{item.ID}}'>
+              <image class='income-icon' src='{{item.IconPath}}'> </image>
+              <text>{{item.IconName}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <!--具体记账的各个属性-->
+    <form bindsubmit='AddAnAccount' report-submit='true'>
+      <view class='detial-container'>
+        <view class='detial-item detail-first-item'>
+          <view>
+            <image class='detial-item-icon' src='/images/money.png'></image>
+            <text>{{recordModel.IconName==''?'类别':recordModel.IconName}}</text>
+          </view>
+          <view>
+          </view>
+          <text>￥</text>
+          <input type='digit' placeholder='0.00' name='money' confirm-type='done' value='{{recordModel.Money}}' bindblur='bindblur' id='money'></input>
+        </view>
+        <view class='detial-item'>
+          <image class='detial-item-icon' src='/images/date.png'></image>
+          <picker mode="date" start="2016-09-01" end="2027-09-01" value='{{date}}' bindchange='DatePickerValueChanged'>{{date}}</picker>
+          <picker mode="time" start="00:00" end="24:00" value='{{time}}' bindchange='TimePickerValueChanged'>{{time}}</picker>
+        </view>
+        <view class='detial-item'>
+          <image class='detial-item-icon' src='/images/note.png'></image>
+          <input placeholder="备注" type='text' class='notes' name='note' value='{{recordModel.Note}}' bindblur='bindblur' id='note'></input>
+        </view>
+
+      </view>
+      <!--保存按钮-->
+      <button class="button-save {{isCompleted==true?'button-canclick':''}}" form-type='submit'>保存</button>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+.me-container{padding: 20px;
+              color: #666666;
+              font-size: 14px;}
+.author{display: flex;
+        align-items: cener;}
+.author-pic{width: 45px;
+            height: 45px;
+            border-radius: 100%;}
+.author-derc{display: flex;
+             flex-direction: column;
+             justify-content: center;
+             margin-left: 10px;
+             font-size: 13px;}
+.name{font-size: 17px;
+      margin-bottom: 2px}
+
+.content{margin-top: 17px;
+         line-height: 22px;
+         font-size: 13px;
+         display: flex;
+         flex-direction: column;
+         }
+.link{margin-top: 17px;}
+.link text{margin-right: 10px;
+           }

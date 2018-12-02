@@ -1,0 +1,20 @@
+/* pages/updateHistory/updateHistory.wxss */
+.update-history-container{padding: 15px;
+                          font-size: 16px;
+                          color: #666666;
+                          }
+.update-history-item{margin-bottom: 25px;}
+.version-top{display: flex;}
+.version-top image{width: 30px;
+                   height: 20px;
+                   margin-left: 7px;}
+.update-detail{margin-top: 10px;
+               font-size: 14px;}
+.update-detail view{margin-top: 2px;}
+.version{
+         border-bottom: 1px solid #eee;
+         display: flex;
+         flex-direction: column;
+         }
+.version text{margin-bottom:2px;}
+.date{font-size: 12px;}

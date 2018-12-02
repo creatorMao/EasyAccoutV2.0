@@ -1,0 +1,57 @@
+<!--pages/count/count.wxml-->
+<view class='count-container' style="{{'min-height:'+height+'px'}}">
+  <!--顶部选择-->
+  <view class='choose'>
+     <picker class='month' mode="date" start="2013-09-01" end="2027-09-01" value='{{currentDate}}'  bindchange='SelectDate' fields='month'>{{currentDate}}</picker>
+    <image src='/images/down.png' class='down-drop'></image>
+  </view>
+  <view class='line'>
+  </view>
+   <view class='line line-small'>
+  </view>
+  <view class='title'>
+     <view class='sub-title'>
+      类别
+     </view>
+     <view class='selector-container'>
+        <view class="selector-mask {{isClicked==true?'selector-mask-active':''}}"></view>
+        <view class='item-wrapper'>
+           <view class="selector-item {{isClicked==false?'selector-item-active':''}}" bindtap='switch'>支出</view>
+           <view class="selector-item {{isClicked==true?'selector-item-active':''}}" bindtap='switch'>收入</view>
+        </view>
+     </view>
+  </view>
+  <!--图表-->
+  <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler">
+  </canvas>
+  <view class='dot'>
+  </view>
+  <view class='title'>
+     <view class='sub-title'>
+      详细
+     </view>
+  </view>
+  <!--具体类别的列表-->
+  <view>
+    <view class='cost-item' wx:for="{{isClicked==false?rawList.costcount:rawList.incomecount}}">
+      <view class='icon'>
+        <image src='/images/icons/{{item.IconName}}.png' class='icon'></image>
+      </view>
+      <view class='right'>
+          <view class='right-top'>
+            <view>
+              <text>{{item.SpecificWay}}</text>
+              <text class='number'>{{item.Number+'笔'}}</text>
+              <text class='sum'>{{'￥'+item.Sum}}</text>
+            </view>
+            <view class='rate'>
+              <text>{{item.Rate+'%'}}</text>
+            </view>
+          </view>
+          <view>
+            <progress percent="{{item.Rate}}" color='{{colors[index]}}' stroke-width="6"/>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

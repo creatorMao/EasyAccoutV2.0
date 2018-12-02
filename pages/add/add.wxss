@@ -1,0 +1,186 @@
+/* pages/add/add.wxss */
+
+.add-page-container{overflow-x: hidden;
+                    width: 100%;
+                    height: 100%;
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;}
+
+.header{height: 8%;
+        background: #208ee1;}
+.main{height: 80%;
+      width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;}
+/*类型转换开始*/
+.type-switch{width: 100px;
+             height: 30px;
+             border: 1px solid white;
+             background: transparent;
+             box-sizing: border-box;
+             margin: 0 auto;
+             border-radius: 2px;
+             position: relative;
+             }
+.type-switch-mask{width: 50%;
+                  height: 101%;
+                  position: absolute;
+                  left: 0px;
+                  top: 0px;
+                  background: white;
+                  z-index: 0;
+                  transition: all 0.3s}
+.type-switch-mask-active{left: 50%;
+                         margin-left: 1px;}
+.type-item-container{width: 100%;
+                     position: absolute;
+                     left: 0px;
+                     top:0px;
+                     z-index: 1}
+.type-switch-item{width: 50%;
+                  height: 100%;
+                  float: left;
+                  text-align: center;
+                  font-size: 15px;
+                  line-height: 30px;
+                  color: white;
+                  }
+.type-switch-item-active{color: #208ee1}
+/*类型转换结束*/
+
+
+
+.detial-container{width: 100%;
+                  margin: 0px 0px 15px 0px;
+                  box-sizing: border-box;}
+
+/*icon*/
+.icon-cntainer{height: 220px;
+               width: 100%;
+               position: relative;
+               }
+.icon{position: absolute;
+      left: 0px;
+      top: 0px;
+      overflow: hidden;
+      width: 200%;
+      height: 100%;
+      transition: all 0.3s}
+.icon-active{left: -100%;}
+.cost-icon-container,.income-icon-container{width: 100%;
+                                            height: 100%;
+                                            float: left;
+                                            padding: 10px 10px 0px 10px;
+                                            box-sizing: border-box;
+                                            }
+.dot-container{display: flex;
+               justify-content: center;
+               position: absolute;
+               bottom: 0px;
+               left: 50%;
+               margin-left: -17px;}
+.dot{width: 10px;
+     height: 10px;
+     border-radius: 100%;
+     background: #d9d9d9;
+     margin: 0 2px;
+     }
+.dot-active{background: #666666}
+                                    
+/*详情item*/
+.detial-item{width: 100%;
+             height: 50px;
+             border-bottom: 1px solid #eeeeee;
+             box-sizing: border-box;
+             padding: 5px 20px;
+             display: flex;
+             align-items: center;
+             color: #666666;
+             font-size: 16px;}
+.detial-item text{line-height: 40px;}
+.detail-first-item{display: flex;}
+.detail-first-item text{margin-left: 15px;}
+.detail-first-item view{display: flex;
+                        justify-content: center;
+                        align-items: center;}
+.detial-item picker,.detial-item input{margin-left: 15px;
+                                       color: #666666;
+                                       }    
+.notes{width:85%;}      
+.detail-first-item input{text-align: left;
+                         margin-left: 0px;
+                         width: 60%;}
+
+.detial-item-icon{width:24px;
+                  height:24px;
+                  }
+        
+
+/*保存按钮*/
+.button-save{width: 90%;
+             position: fixed;
+             bottom: 10px;
+             left: 0;
+             height: 50px;
+             background: rgba(232, 232, 232, 0.5);
+             text-align: center;
+             line-height: 50px;
+             margin-left: 5%;
+             margin-bottom: 8px;
+             transition: all 0.3s;
+             border-radius: 2px;
+             color: #666666;
+             }
+.button-canclick{background: rgba(232, 232, 232, 1)}
+
+.button-voice{position: fixed;
+              bottom: 150px;
+              right: 5px;
+              border-radius: 100%;
+              background: #eeeeee;
+              width: 50px;
+              height: 50px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              }
+.button-voice image{width: 40px;
+                    height: 40px;
+                    }
+
+
+
+.cost-icon-container,.income-icon-container{display: flex;
+                     flex-direction: row;
+                     justify-content: flex-start;
+                     align-content: flex-start;
+                     flex-wrap: wrap;
+                     font-size: 12px;
+                     color: #666666}
+.cost-icon-item,.income-icon-item{display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 10px 0px;
+                width: 20%;
+                box-sizing: border-box;
+                text-align: center;
+                position: relative;}
+.cost-icon-item::after,.income-icon-item::after{content:"";
+                      width: 52px;
+                      height: 52px;
+                      border-radius: 100%;
+                      background: #e8e8e8;
+                      position: absolute;
+                      z-index: -1;
+                      top: -2px;
+                      left: 1%;
+                      right: 1%;
+                      margin:0 auto;
+                      opacity: 0;
+                      transition: all 0.3s;
+                      }
+.icon-item-active::after{opacity: 1}
+.cost-icon,.income-icon{width: 30px;
+                        height: 30px;
+                        }
