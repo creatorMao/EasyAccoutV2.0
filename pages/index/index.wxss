@@ -199,8 +199,9 @@
                       margin: 0 auto;
                       text-align: center;
                       color: #707070;
-                      margin-top: 100px;
+                      padding-top: 100px;
                       font-size:14px;
+                      box-sizing: border-box;
                       }
 .none-items-icon{width: 48px;
                  height: 48px;

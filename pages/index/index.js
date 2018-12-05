@@ -273,6 +273,13 @@ Page({
     console.log(e);
     var deltaY = e.detail.deltaY;
     var scrollTop = e.detail.scrollTop;
+    var scrollHeight=e.detail.scrollHeight;
+    console.log(scrollTop);
+    console.log(scrollHeight);
+    if (scrollTop<10)
+    {
+        return;
+    }
     if (scrollTop < 10 || deltaY > 5)
     {
       self.setData({
@@ -280,7 +287,7 @@ Page({
       })
       return;
     }
-    if (deltaY<-5)
+    if (deltaY<-10)
     {
       self.setData({
         down:true
